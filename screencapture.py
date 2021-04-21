@@ -1,14 +1,14 @@
 from PIL import ImageGrab
 import win32gui
 
+
 class ScreenCapture:
 
-    def __init__(self, hwnd, dic):
-        rect = win32gui.GetWindowRect(hwnd)#左上右下坐标
-        self.x = rect[0]
-        self.y = rect[1]
-        self.width = rect[2] - rect[0]
-        self.height = rect[3] - rect[1]
+    def __init__(self, x, y, w, h, dic):
+        self.x = x
+        self.y = y
+        self.width = w
+        self.height = h
         self.wow_info_dic = dic
 
     def get_info(self):

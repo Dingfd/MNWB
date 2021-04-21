@@ -2,7 +2,7 @@ import win32api
 import win32con
 import win32gui
 from PIL import ImageGrab
-import pyautogui
+# import pyautogui
 
 def get_hwnd_list_by_name(window_name) -> list:
     hwnd_list = []
@@ -28,18 +28,18 @@ def get_window_bitmap(hwnd, width, height):
 
     #PIL的方式
     # 截取全屏
-    img_all = ImageGrab.grab()
+    # img_all = ImageGrab.grab()
     # 坐标值分别为(x,y,w,h)
-    size = (100, 100, 600, 200)
-    img = ImageGrab.grab(size)
+    # size = (100, 100, 600, 200)
+    # img = ImageGrab.grab(size)
     # 将截图保存
-    img.save('1.png')
+    # img.save('1.png')
 
     #pyautogui的方式
     # 坐标值分别为(x,y,w,h)
-    size = (0, 0, 600, 200)
+    # size = (0, 0, 600, 200)
     # 截取全屏
-    img_all = pyautogui.screenshot()
+    # img_all = pyautogui.screenshot()
     # 截取指定位置大小的图，需要注意的是gegion不可缺少
-    img = pyautogui.screenshot(region=size)
-    img.save('1.png')
+    # img = pyautogui.screenshot(region=size)
+    # img.save('1.png')
