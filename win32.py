@@ -1,8 +1,7 @@
 import win32api
 import win32con
 import win32gui
-from PIL import ImageGrab
-# import pyautogui
+
 
 def get_hwnd_list_by_name(window_name) -> list:
     hwnd_list = []
@@ -11,6 +10,14 @@ def get_hwnd_list_by_name(window_name) -> list:
         hwnd_list.append(hwnd_tmp)
         hwnd_tmp = win32gui.FindWindowEx(0, hwnd_tmp, None, window_name)
     return hwnd_list
+
+
+def keyboard_down(hwnd, key):
+    win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, key, 0)
+
+
+def keyboard_up(hwnd, key):
+    win32api.PostMessage(hwnd, win32con.WM_KEYUP, key, 0)
 
 
 def get_window_info(hwnd) -> tuple:

@@ -1,1 +1,1 @@
-from paladin_stsm import *
+from .paladin_stsm import *
